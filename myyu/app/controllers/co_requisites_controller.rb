@@ -1,0 +1,2 @@
+class CoRequisitesController < ApplicationController
+end
