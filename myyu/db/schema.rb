@@ -11,25 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160525223435) do
+ActiveRecord::Schema.define(version: 20160525231045) do
 
-  create_table "courses", force: :cascade do |t|
-    t.string   "dept"
-    t.string   "course"
-    t.string   "title"
+  create_table "co_requisites", force: :cascade do |t|
+    t.integer  "course1_id"
+    t.integer  "course2_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "courses", force: :cascade do |t|
+    t.string   "department"
+    t.string   "course_number"
+    t.string   "title"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
   create_table "offerings", force: :cascade do |t|
-    t.integer  "sem"
-    t.string   "loc"
+    t.integer  "semester"
+    t.string   "location"
     t.integer  "section"
-    t.string   "instructor"
-    t.integer  "cap"
+    t.integer  "crn"
+    t.string   "professor_last_name"
+    t.integer  "spots_available"
     t.integer  "course_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
   add_index "offerings", ["course_id"], name: "index_offerings_on_course_id"

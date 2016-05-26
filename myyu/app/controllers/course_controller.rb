@@ -1,2 +1,3 @@
 class CourseController < ApplicationController
+    
 end
