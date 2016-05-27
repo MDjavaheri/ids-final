@@ -6,4 +6,11 @@ class Offering < ActiveRecord::Base
       Summer: 2,
       Pre_Summer: 3
   }
+  def search
+  end
+  def display
+  end
+  def enroll
+    self.spots_available -= 1
+  end
 end
