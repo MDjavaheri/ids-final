@@ -15,6 +15,8 @@ class Offering < ActiveRecord::Base
   def enroll
     if (self.spots_available > 0)
       self.spots_available -= 1
+    else
+      return false
     end
   end
 end

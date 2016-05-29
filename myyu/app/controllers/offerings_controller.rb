@@ -21,6 +21,7 @@ class OfferingsController < ApplicationController
       redirect_to offerings_url
     else
       flash "Course is full!"
+    end
   def create
     @offering = Offering.new(offering_params)
 
