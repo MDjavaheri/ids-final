@@ -1,0 +1,10 @@
+<% @offerings.each do |offering| %>
+  <tr>
+    <td><%= offering.course.title %></td>
+    <td><%= offering.course.department %></td>
+    <td><%= offering.confirm.course_number %></td>
+    <td><%= offering.course.title %></td>
+    <td><%= offering.course.department %></td>
+    <td><%= offering.confirm.course_number %></td>
+</tr>
+<% end %>

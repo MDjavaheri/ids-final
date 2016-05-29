@@ -1,4 +1,4 @@
-class OfferingController < ApplicationController
+class OfferingsController < ApplicationController
     before_action :set_offering, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -15,6 +15,12 @@ class OfferingController < ApplicationController
   def edit
   end
 
+  def enroll
+    if offering.spots_available > 0
+      offering.spots_available -= 1
+      redirect_to offerings_url
+    else
+      flash "Course is full!"
   def create
     @offering = Offering.new(offering_params)
 
