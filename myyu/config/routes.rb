@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   resources :courses do
     resources :offerings do
-      collection { post :enroll }
+      collection { edit :enroll }
     end
   end
-
 end

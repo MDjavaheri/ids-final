@@ -10,7 +10,9 @@ class Offering < ActiveRecord::Base
     
   end
   def search
+      
       Offering.find(params[:search_terms])
+      
   end
   def enroll
     if (self.spots_available > 0)

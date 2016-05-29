@@ -16,12 +16,7 @@ class OfferingsController < ApplicationController
   end
 
   def enroll
-    if offering.spots_available > 0
-      offering.spots_available -= 1
-      redirect_to offerings_url
-    else
-      flash "Course is full!"
-    end
+    @offering = Offering.find(params[:id])
   def create
     @offering = Offering.new(offering_params)
 
