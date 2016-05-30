@@ -1,14 +1,29 @@
-<% @offerings.each do |offering| %>
-  <tr>
-    <td><%= offering.course.title %></td>
-    <td><%= offering.course.department %></td>
-    <td><%= offering.confirm.course_number %></td>
-    <td><%= offering.crn %></td>
-    <td><%= offering.section %></td>
-    <td><%= offering.semester %></td>
-    <td><%= offering.professor_last_name %></td>
-    <td><%= offering.location %></td>
-    <td><%= offering.spots_available %></td>
-    <td><%= enroll_course_offerings_path %></td>
-</tr>
-<% end %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Greeting</title>
+  </head>
+  <body>
+  
+    <h1>Course Offerings</h1>
+    
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <% @offerings.each do |offering| %>
+          <tr>
+            <td><%= offering.course.title %></td>
+            <td><%= offering.course.department %></td>
+            <td><%= offering.confirm.course_number %></td>
+            <td><%= offering.crn %></td>
+            <td><%= offering.section %></td>
+            <td><%= offering.semester %></td>
+            <td><%= offering.professor_last_name %></td>
+            <td><%= offering.location %></td>
+            <td><%= offering.spots_available %></td>
+            <td><%= enroll_course_offerings_path %></td>
+        </tr>
+        <% end %>
+         </div>
+    </div>
+</body>
+</html>
