@@ -5,6 +5,11 @@ class CoursesController < ApplicationController
     @courses = Course.all
   end
 
+
+  def search_myyu
+    @courses = Course.find_in_myyu(params)
+  end
+  
   def show
   end
 

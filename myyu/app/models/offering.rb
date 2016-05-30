@@ -7,13 +7,8 @@ class Offering < ActiveRecord::Base
       Pre_Summer: 3
   }
   def list_sessions
-    
   end
-  def search
-      
-      Offering.find(params[:search_terms])
-      
-  end
+ 
   def enroll
     if (self.spots_available > 0)
       self.spots_available -= 1
